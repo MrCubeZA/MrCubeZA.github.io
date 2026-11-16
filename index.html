@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timothy Miller — Junior Developer</title>
+  <meta name="description" content="Junior Developer building cross-platform apps in C# and .NET MAUI. Studying at the Future Innovation Lab, University of the Western Cape. Video editor.">
+  <meta name="author" content="Timothy Miller">
+  <link rel="canonical" href="https://mrcubeza.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Timothy Miller — Junior Developer">
+  <meta property="og:description" content="Junior Developer building cross-platform apps in C# and .NET MAUI. Future Innovation Lab, University of the Western Cape.">
+  <meta property="og:image" content="https://mrcubeza.github.io/assets/og-image.png">
+  <meta property="og:url" content="https://mrcubeza.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timothy Miller — Junior Developer">
+  <meta name="twitter:description" content="Junior Developer building cross-platform apps in C# and .NET MAUI. Future Innovation Lab, University of the Western Cape.">
+  <meta name="twitter:image" content="https://mrcubeza.github.io/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mobile-main">Skip to content</a>
+
+  <div class="sky" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="haze" aria-hidden="true"></div>
+  <div class="city" aria-hidden="true"></div>
+  <div class="floor" aria-hidden="true"></div>
+
+  <div id="desktop-root">
+    <div class="icons" id="icons">
+      <div class="ico" data-project="tomus" tabindex="0"><div class="ai i-tomus"><img src="assets/images/tomus-icon.png" alt=""></div><span>Tomus</span></div>
+      <div class="ico" data-app="about" tabindex="0"><div class="ai i-ab">i</div><span>About</span></div>
+      <div class="ico" data-app="projects" tabindex="0"><div class="ai i-pr">PR</div><span>Projects</span></div>
+      <div class="ico" data-app="skills" tabindex="0"><div class="ai i-sk">SK</div><span>Skills</span></div>
+      <div class="ico" data-app="cv" tabindex="0"><div class="ai i-cv">CV</div><span>CV.pdf</span></div>
+      <div class="ico" data-app="contact" tabindex="0"><div class="ai i-co">@</div><span>Contact</span></div>
+      <div class="ico" data-app="video" tabindex="0"><div class="ai i-re">▶</div><span>Video Editing</span></div>
+      <div class="ico" data-app="vs" tabindex="0"><div class="ai i-vs">VS</div><span>CursingCube. Portfolio.sln</span></div>
+    </div>
+
+    <!-- Visual Studio -->
+    <div class="win focus" id="w-vs" data-app="vs">
+      <div class="wt">
+        <div class="ai sm i-vs">VS</div>
+        <div class="vsmenu">
+          <span>File</span><span>Edit</span><span>View</span><span>Git</span><span>Project</span><span>Build</span><span>Debug</span><span>Test</span><span>Analyze</span><span>Tools</span><span>Extensions</span><span>Window</span><span>Help</span>
+          <div class="vsearch">⌕</div>
+          <div class="vsol">CursingCube.Portfolio</div>
+        </div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="vtool">
+        <span class="tbi">◀</span><span class="tbi">▶</span>
+        <div class="vsep"></div>
+        <span class="tbi">↶</span><span class="tbi">↷</span>
+        <div class="vsep"></div>
+        <span class="dd">Debug</span><span class="dd">Any CPU</span>
+        <button type="button" class="start" id="vsStart"><i>▶</i> Start<span style="color:#7d9e8c;font-weight:400">· Tomus</span></button>
+        <span class="tbi" style="color:#5d6880">▷</span>
+        <div class="vsep"></div>
+        <span class="tbi">⟳</span><span class="tbi">⧉</span>
+        <span class="tbi" style="margin-left:auto;color:#9fb3ff">⎇ main</span>
+        <span class="tbi" style="color:#ffb4ef">👤 MrCubeZA</span>
+      </div>
+      <div class="vbody">
+        <div class="vleft">
+          <div class="dtabs">
+            <button type="button" class="on" data-tab="profile"><span class="fi" style="color:#9fb3ff">C#</span>Profile.cs</button>
+            <button type="button" data-tab="projects"><span class="fi" style="color:#9fb3ff">C#</span>Projects.cs</button>
+            <button type="button" data-tab="readme">README.md</button>
+          </div>
+          <div class="code"><div class="ln" id="lnum"></div><div class="src" id="src"></div></div>
+          <div class="out">
+            <div class="otabs"><span class="on">Output</span><span>Error List</span><span>Terminal</span><span class="src2">Show output from: <span class="dd">Build</span></span></div>
+            <div class="olog" id="olog">Build started…<br>1&gt;------ Build started: Project: Portfolio.Web, Configuration: Debug ------<br>1&gt;Portfolio.Web -&gt; ..\bin\Debug\Portfolio.Web.dll<br><span class="ok">========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========</span></div>
+          </div>
+        </div>
+        <div class="sol">
+          <div class="solh">Solution Explorer <span>⟳ ⧉ ✕</span></div>
+          <div class="solsearch">Search Solution Explorer (Ctrl+;)</div>
+          <div class="tree" id="sol-tree"></div>
+        </div>
+      </div>
+      <div class="vstat"><span>✓ Ready</span><span>C# · .NET MAUI</span><span class="r">↑ 0 · ✎ 0</span><span>⎇ main</span><span>MrCubeZA/portfolio</span></div>
+    </div>
+
+    <!-- Projects -->
+    <div class="win" id="w-projects" data-app="projects" style="left:1180px;top:16px;width:700px;height:990px">
+      <div class="wt">
+        <div class="ai sm i-pr">PR</div>
+        <div class="tt"><b>Projects</b> — Flagship work &amp; coursework</div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <h2>PROJECTS</h2>
+        <p class="lede">Flagship project and coursework</p>
+        <p class="muted" style="margin-bottom:14px">Tomus is first. Featured coursework follows. Click a card for the full write-up. Only public repositories are linked; Tomus source stays private.</p>
+        <div class="sec-label">Apps &amp; games</div>
+        <div class="pcards" id="project-cards"></div>
+        <div class="sec-label">Team projects · Digital Social Innovation</div>
+        <div class="team-list" id="team-list"></div>
+      </div>
+    </div>
+
+    <!-- Project detail (reused) -->
+    <div class="win closed" id="w-project" data-app="project" style="left:360px;top:48px;width:720px;height:760px">
+      <div class="wt">
+        <div class="ai sm i-pr">PR</div>
+        <div class="tt"><b>Project</b></div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane"><div class="detail"></div></div>
+    </div>
+
+    <!-- About -->
+    <div class="win closed" id="w-about" data-app="about" style="left:200px;top:70px;width:620px;height:680px">
+      <div class="wt">
+        <div class="ai sm i-ab">i</div>
+        <div class="tt">About.txt — Notepad</div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <div class="about-head">
+          <img src="assets/images/timothy-miller.jpg" width="96" height="96" alt="Portrait of Timothy Miller">
+          <div class="who">
+            <h2>TIMOTHY MILLER</h2>
+            <p class="lede">Junior Developer &amp; video editor · @MrCubeZA</p>
+            <p class="muted">Future Innovation Lab · University of the Western Cape</p>
+          </div>
+        </div>
+        <p class="bio">Junior Developer building cross-platform apps in C# and .NET MAUI. Currently studying at the Future Innovation Lab (University of the Western Cape), where I build MVVM apps with SQLite local storage and work in Agile/Scrum teams. My flagship project is Tomus, a free, ad-free Android reader app, still in development. I bring a background in video editing and visual design, and I am competitive, a quick learner and committed to doing the job well.</p>
+        <div class="sec-label">Education</div>
+        <div class="timeline">
+          <div class="tl"><time>May 2026 – Present</time><div><b>Future Innovation Lab – University of the Western Cape</b><span>Programming Fundamentals (C#) and C# Object Orientation; .NET MAUI Mobile Development (XAML, MVVM and Local Storage); Git and source control; Digital Social Innovation: Design Sprint, Design Thinking, Agile/Scrum project management, Group Dynamics, Software Professional Practice.</span></div></div>
+          <div class="tl"><time></time><div><b>Tafelberg School</b><span>Matric Bachelors Pass</span></div></div>
+        </div>
+        <div class="sec-label">Experience</div>
+        <div class="timeline">
+          <div class="tl"><time>Sep 2024 – Aug 2025</time><div><b>Training Force</b><span>Hosted by Success By Design</span></div></div>
+          <div class="tl"><time>Mar 2024 – Jun 2024</time><div><b>Yuri Arcurs Productions</b><span>Search Editor and Keyworder</span></div></div>
+          <div class="tl"><time>Jun 2022 – Sep 2022</time><div><b>Action Retail Display</b></div></div>
+          <div class="tl"><time>Jan 2020 – Jan 2021</time><div><b>RLabs Learnership</b><span>Work-Ready: Know Yourself, Time, Your Wallet, Presenting you, The Interview, Attitude, Customers, The Internet and You.</span></div></div>
+        </div>
+        <div class="sec-label">Languages</div>
+        <p>English: fluent · Afrikaans: fluent</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="win closed" id="w-skills" data-app="skills" style="left:260px;top:50px;width:760px;height:640px">
+      <div class="wt">
+        <div class="ai sm i-sk">SK</div>
+        <div class="tt"><b>Skills</b></div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <h2>SKILLS</h2>
+        <p class="lede">Technical, product and creative</p>
+        <div class="skill-grid">
+          <div class="skill-col">
+            <h3>Technical</h3>
+            <ul>
+              <li>C#, .NET 10 / .NET MAUI, XAML</li>
+              <li>Object-Oriented Programming (abstract classes, inheritance, polymorphism, encapsulation)</li>
+              <li>MVVM (INotifyPropertyChanged, ICommand), data binding, Shell navigation with parameters, dependency injection, async/await</li>
+              <li>SQLite (sqlite-net-pcl), MAUI FileSystem; Entity Relationship Diagrams</li>
+              <li>Git and GitHub; Visual Studio; Android Emulator / SDK</li>
+              <li>Familiar with REST / HttpClient</li>
+            </ul>
+          </div>
+          <div class="skill-col magenta">
+            <h3>Product &amp; project</h3>
+            <ul>
+              <li>Agile/Scrum (user stories, acceptance criteria, backlog, Sprint events, Definition of Done); Waterfall/hybrid/SAFe awareness; project triple constraint (scope, time, cost, quality)</li>
+              <li>ClickUp (team project and collaboration tool)</li>
+              <li>Google Design Sprint, Design Thinking, user research and usability testing</li>
+              <li>PESTLE analysis, stakeholder mapping and personas, value proposition and revenue-model development</li>
+              <li>Inclusive design for low-data / low-end-device users; software professional ethics (ACM / IEEE)</li>
+              <li>Team dynamics (Tuckman model)</li>
+            </ul>
+          </div>
+          <div class="skill-col yellow">
+            <h3>Creative &amp; office</h3>
+            <ul>
+              <li>Adobe Creative Cloud: Photoshop, After Effects, Premiere Pro, Media Encoder</li>
+              <li>Search Editing (3-month training course at Yuri Arcurs Productions); trends for Shutterstock and iStock</li>
+              <li>Microsoft Office (Word, PowerPoint and others)</li>
+              <li>WordPress; LearnFast</li>
+              <li>Working knowledge of computers and computer system software</li>
+            </ul>
+          </div>
+          <div class="skill-col green">
+            <h3>Strengths</h3>
+            <ul>
+              <li>Quick learner</li>
+              <li>Exceptional social skills and ability to get along with anyone</li>
+              <li>Self-motivated</li>
+              <li>Problem solving</li>
+              <li>Leadership</li>
+              <li>English and Afrikaans: fluent</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV -->
+    <div class="win closed" id="w-cv" data-app="cv" style="left:340px;top:110px;width:520px;height:420px">
+      <div class="wt">
+        <div class="ai sm i-cv">CV</div>
+        <div class="tt"><b>Timothy-Miller-CV-2026.pdf</b></div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <div class="cv-card">
+          <h2>CURRICULUM VITAE</h2>
+          <p class="lede">Timothy Miller · Junior Developer</p>
+          <p>A two-page CV covering technical skills, projects, education, experience and references. Download the PDF for the full document.</p>
+          <p><a class="btn p" href="assets/Timothy-Miller-CV-2026.pdf" download="Timothy-Miller-CV-2026.pdf">Download CV (PDF)</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="win closed" id="w-contact" data-app="contact" style="left:400px;top:140px;width:460px;height:340px">
+      <div class="wt">
+        <div class="ai sm i-co">@</div>
+        <div class="tt">Contact</div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <h2>CONTACT</h2>
+        <p class="lede" style="margin-bottom:14px">The best ways to reach me</p>
+        <div class="links">
+          <a href="mailto:timothy.miller.99@gmail.com">Email<span class="lbl">timothy.miller.99@gmail.com</span></a>
+          <a href="https://github.com/MrCubeZA" target="_blank" rel="noopener noreferrer">GitHub<span class="lbl">github.com/MrCubeZA</span></a>
+          <a href="https://www.youtube.com/@MrCube773" target="_blank" rel="noopener noreferrer">YouTube<span class="lbl">youtube.com/@MrCube773</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video editing -->
+    <div class="win closed" id="w-video" data-app="video" style="left:300px;top:80px;width:640px;height:460px">
+      <div class="wt">
+        <div class="ai sm i-re">▶</div>
+        <div class="tt"><b>Video Editing</b></div>
+        <div class="ctl"><button type="button" class="mn" aria-label="Minimize">—</button><button type="button" class="mx" aria-label="Maximize">▢</button><button type="button" class="x" aria-label="Close">✕</button></div>
+      </div>
+      <div class="pane">
+        <h2>VIDEO EDITING</h2>
+        <p class="lede">Adobe Premiere Pro and After Effects</p>
+        <p class="bio">I also work as a video editor, with advanced knowledge of Adobe Creative Cloud — Premiere Pro, After Effects, Photoshop and Media Encoder. I trained in Search Editing at Yuri Arcurs Productions.</p>
+        <a class="video-hero" href="https://www.youtube.com/@MrCube773" target="_blank" rel="noopener noreferrer">
+          <span class="cap">YOUTUBE · @MrCube773</span>
+          <div class="play">▶</div>
+        </a>
+        <p style="margin-top:14px"><a class="btn" href="https://www.youtube.com/@MrCube773" target="_blank" rel="noopener noreferrer">Open the YouTube channel ↗</a></p>
+      </div>
+    </div>
+
+    <!-- Start menu -->
+    <div class="smenu" id="smenu">
+      <div class="sm-in">
+        <div class="sm-s">
+          <span aria-hidden="true">⌕</span>
+          <input id="start-search" type="search" placeholder="Search projects, about, contact…" autocomplete="off" aria-label="Search the start menu">
+        </div>
+        <div class="sm-h">Pinned <span>All apps ›</span></div>
+        <div class="pins">
+          <button type="button" class="pin" data-project="tomus" data-search="tomus reader app flagship android"> <div class="ai md i-tomus"><img src="assets/images/tomus-icon.png" alt=""></div>Tomus</button>
+          <button type="button" class="pin" data-app="projects" data-search="projects apps"> <div class="ai md i-pr">PR</div>Projects</button>
+          <button type="button" class="pin" data-app="vs" data-search="visual studio portfolio solution"> <div class="ai md i-vs">VS</div>Portfolio</button>
+          <button type="button" class="pin" data-app="about" data-search="about timothy bio"> <div class="ai md i-ab">i</div>About</button>
+          <button type="button" class="pin" data-app="skills" data-search="skills csharp maui"> <div class="ai md i-sk">SK</div>Skills</button>
+          <button type="button" class="pin" data-app="cv" data-search="cv resume curriculum vitae pdf"> <div class="ai md i-cv">CV</div>CV</button>
+          <button type="button" class="pin" data-app="contact" data-search="contact email github youtube"> <div class="ai md i-co">@</div>Contact</button>
+          <button type="button" class="pin" data-app="video" data-search="video editing youtube premiere after effects"> <div class="ai md i-re">▶</div>Video</button>
+        </div>
+        <div class="sm-h">Recommended <span>More ›</span></div>
+        <div class="recs">
+          <button type="button" class="rec" data-project="tomus" data-search="tomus reader app flagship android pdf"><div class="ai md i-tomus"><img src="assets/images/tomus-icon.png" alt=""></div><div><b>Tomus</b><small>Flagship · in development · Android</small></div></button>
+          <button type="button" class="rec" data-project="offline-shopping" data-search="offline shopping netflix featured projects"><div class="ai md i-shop">OS</div><div><b>Offline Shopping App</b><small>Featured · .NET MAUI</small></div></button>
+          <button type="button" class="rec" data-app="projects" data-search="netflix clone maui"><div class="ai md i-flix">N</div><div><b>Netflix Clone</b><small>Featured · .NET MAUI · XAML</small></div></button>
+          <button type="button" class="rec" data-app="contact" data-search="contact email github youtube"><div class="ai md i-co">@</div><div><b>Contact</b><small>Email · GitHub · YouTube</small></div></button>
+          <button type="button" class="rec" data-app="cv" data-search="cv resume pdf"><div class="ai md i-cv">CV</div><div><b>Download CV</b><small>Timothy-Miller-CV-2026.pdf</small></div></button>
+        </div>
+        <p class="sm-empty">No matching apps. Try “projects”, “about” or “contact”.</p>
+      </div>
+      <div class="sm-f">
+        <div class="usr">
+          <div class="av"><img src="assets/images/timothy-miller-sm.jpg" width="32" height="32" alt=""></div>
+          Timothy <span style="color:#7d889e">· @MrCubeZA</span>
+        </div>
+        <button type="button" class="pwr" id="pwr" title="Close start menu" aria-label="Close start menu">⏻</button>
+      </div>
+    </div>
+
+    <div class="taskbar">
+      <div class="tbc" id="tbc">
+        <button type="button" class="tbb" id="startBtn" title="Start" aria-label="Start">
+          <div class="winlogo"><i style="background:var(--c)"></i><i style="background:#7a8cff"></i><i style="background:#b36bff"></i><i style="background:var(--m)"></i></div>
+        </button>
+        <button type="button" class="srch-btn" id="tb-search" aria-label="Search">⌕ Search</button>
+      </div>
+      <div class="tray">
+        <span class="otw">Open to work</span>
+        <span class="tri" aria-hidden="true">⌃</span>
+        <span class="tri" aria-hidden="true">◠ ◖ ▮</span>
+        <div class="clock">
+          <div id="clk">--:--<small>SAST</small></div>
+          <div id="dte"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile / narrow-screen fallback (hidden on desktop) -->
+  <main class="mobile-site" id="mobile-main">
+    <header class="m-head">
+      <img src="assets/images/timothy-miller.jpg" width="72" height="72" alt="Portrait of Timothy Miller">
+      <div>
+        <h1>TIMOTHY MILLER</h1>
+        <p>Junior Developer &amp; video editor</p>
+      </div>
+    </header>
+    <p class="m-note">You are on a small screen, so this is a simple stacked layout. Open the site on a desktop or laptop for the Windows 11-style portfolio.</p>
+    <nav class="m-nav">
+      <a href="#m-about">About</a>
+      <a href="#m-sec-projects">Projects</a>
+      <a href="#m-skills">Skills</a>
+      <a href="#m-cv">CV</a>
+      <a href="#m-contact">Contact</a>
+      <a href="#m-video">Video</a>
+    </nav>
+
+    <section id="m-about">
+      <h2>About</h2>
+      <div class="pane" style="padding:0;background:none;overflow:visible">
+        <p class="bio">Junior Developer building cross-platform apps in C# and .NET MAUI. Currently studying at the Future Innovation Lab (University of the Western Cape, since May 2026), where I build MVVM apps with SQLite local storage and work in Agile/Scrum teams. My flagship project is Tomus, a free, ad-free Android reader app, still in development. I bring a background in video editing and visual design, and I am competitive, a quick learner and committed to doing the job well.</p>
+        <div class="sec-label">Education</div>
+        <p><b>Future Innovation Lab – University of the Western Cape</b> · May 2026 – Present<br>Programming Fundamentals (C#) and C# Object Orientation; .NET MAUI Mobile Development; Git; Digital Social Innovation.</p>
+        <p style="margin-top:8px"><b>Tafelberg School</b> · Matric Bachelors Pass</p>
+      </div>
+    </section>
+
+    <section id="m-sec-projects">
+      <h2>Projects</h2>
+      <div class="pcards" id="m-projects"></div>
+      <div class="sec-label">Team projects · Digital Social Innovation</div>
+      <div class="team-list" id="m-team"></div>
+    </section>
+
+    <section id="m-skills">
+      <h2>Skills</h2>
+      <div class="skill-grid">
+        <div class="skill-col">
+          <h3>Technical</h3>
+          <ul>
+            <li>C#, .NET 10 / .NET MAUI, XAML</li>
+            <li>OOP, MVVM, data binding, Shell navigation, dependency injection, async/await</li>
+            <li>SQLite, ERDs, Git and GitHub, Visual Studio, Android Emulator</li>
+            <li>Familiar with REST / HttpClient</li>
+          </ul>
+        </div>
+        <div class="skill-col magenta">
+          <h3>Product, creative &amp; strengths</h3>
+          <ul>
+            <li>Agile/Scrum, Design Sprint, Design Thinking, ClickUp</li>
+            <li>Premiere Pro, After Effects, Photoshop, Media Encoder</li>
+            <li>Quick learner, problem solving, leadership</li>
+            <li>English and Afrikaans: fluent</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="m-cv">
+      <h2>CV</h2>
+      <p style="margin-bottom:12px"><a class="btn p" href="assets/Timothy-Miller-CV-2026.pdf" download="Timothy-Miller-CV-2026.pdf">Download CV (PDF)</a></p>
+    </section>
+
+    <section id="m-contact">
+      <h2>Contact</h2>
+      <div class="links">
+        <a href="mailto:timothy.miller.99@gmail.com">Email<span class="lbl">timothy.miller.99@gmail.com</span></a>
+        <a href="https://github.com/MrCubeZA" target="_blank" rel="noopener noreferrer">GitHub<span class="lbl">github.com/MrCubeZA</span></a>
+        <a href="https://www.youtube.com/@MrCube773" target="_blank" rel="noopener noreferrer">YouTube<span class="lbl">youtube.com/@MrCube773</span></a>
+      </div>
+    </section>
+
+    <section id="m-video">
+      <h2>Video editing</h2>
+      <p class="bio">Video editor working in Adobe Premiere Pro, After Effects, Photoshop and Media Encoder.</p>
+      <p><a class="btn p" href="https://www.youtube.com/@MrCube773" target="_blank" rel="noopener noreferrer">YouTube channel ↗</a></p>
+    </section>
+  </main>
+
+  <noscript>
+    <p style="position:relative;z-index:3;padding:20px;color:#c9d3e0;max-width:40em">This portfolio uses a little JavaScript for the desktop windows. You can still download the <a href="assets/Timothy-Miller-CV-2026.pdf">CV (PDF)</a> or visit <a href="https://github.com/MrCubeZA">GitHub</a>.</p>
+  </noscript>
+
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

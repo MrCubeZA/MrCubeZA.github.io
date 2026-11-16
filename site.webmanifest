@@ -1,0 +1,13 @@
+{
+  "name": "Timothy Miller — Junior Developer",
+  "short_name": "MrCubeZA",
+  "description": "Junior Developer building cross-platform apps in C# and .NET MAUI.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#05040c",
+  "theme_color": "#05040c",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
