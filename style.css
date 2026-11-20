@@ -294,7 +294,7 @@ button, input, textarea { font-family: inherit; }
 .pane {
   flex: 1; min-height: 0; overflow: auto;
   background: radial-gradient(ellipse at 100% 0, rgba(0, 240, 255, .07), transparent 55%), #090b12;
-  padding: 18px 20px 22px;
+  padding: 18px 20px 28px;
 }
 .pane h2, .note h3 {
   font-family: Orbitron, sans-serif; font-size: 18px; color: #fff;
@@ -394,6 +394,21 @@ button, input, textarea { font-family: inherit; }
 }
 .erd-wrap.art-wrap { background: #100814; padding: 0; }
 .erd-wrap.art-wrap img { border-radius: 8px; }
+.erd-wrap.logo-wrap {
+  background: radial-gradient(ellipse at 50% 40%, rgba(212, 180, 131, .14), transparent 65%), #0B0B0D;
+  border-color: rgba(212, 180, 131, .35); padding: 22px 16px 14px; text-align: center;
+}
+.erd-wrap.logo-wrap img {
+  width: min(240px, 60%); height: auto; aspect-ratio: 1; object-fit: contain;
+  margin: 0 auto; border-radius: 22%; box-shadow: 0 10px 30px rgba(0, 0, 0, .6), 0 0 0 1px rgba(212, 180, 131, .25);
+}
+/* Screenshot gallery (used when a project lists gallery images) */
+.shots {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 200px);
+  gap: 12px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory;
+}
+.shot { margin: 0; scroll-snap-align: start; }
+.shot img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid #20263a; }
 .detail ul.planned { color: #9aa5ba; }
 
 /* About */

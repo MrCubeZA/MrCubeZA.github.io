@@ -82,8 +82,68 @@
 
   function applyWinBox(win, box) {
     Object.entries(box).forEach(([k, v]) => { win.style[k] = v; });
+    win.dataset.wantW = parseFloat(box.width);
+    win.dataset.wantH = parseFloat(box.height);
     win.classList.remove("max", "min");
+    fitWin(win);
   }
+
+  /* ---------- Keep windows inside the screen ---------- */
+  const EDGE = 8;
+  function taskbarH() {
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--tb")) || 48;
+  }
+  // Shrinks a window to the visible desktop (above the taskbar) and nudges it back on screen.
+  // The designed size is remembered, so windows grow back when the browser gets bigger.
+  function fitWin(w) {
+    if (!w || innerWidth <= 860) return;
+    if (!w.dataset.wantW) {
+      w.dataset.wantW = w.offsetWidth || parseFloat(w.style.width) || parseFloat(getComputedStyle(w).width);
+      w.dataset.wantH = w.offsetHeight || parseFloat(w.style.height) || parseFloat(getComputedStyle(w).height);
+    }
+    const aw = innerWidth, ah = innerHeight - taskbarH();
+    const width = Math.min(+w.dataset.wantW, aw - EDGE * 2);
+    const height = Math.min(+w.dataset.wantH, ah - EDGE * 2);
+    w.style.width = width + "px";
+    w.style.height = height + "px";
+    const left = parseFloat(w.style.left) || w.offsetLeft || 0;
+    const top = parseFloat(w.style.top) || w.offsetTop || 0;
+    w.style.left = Math.max(EDGE, Math.min(left, aw - width - EDGE)) + "px";
+    w.style.top = Math.max(EDGE, Math.min(top, ah - height - EDGE)) + "px";
+  }
+
+  // Opening layout: Visual Studio on the left, Projects docked to the right edge,
+  // both sized to the screen so nothing hides under the taskbar or off the side.
+  function layoutDesktop() {
+    if (innerWidth <= 860) return;
+    const aw = innerWidth, ah = innerHeight - taskbarH();
+    const pr = W("projects"), vs = W("vs");
+    const prW = Math.round(Math.max(420, Math.min(700, aw * 0.36)));
+    const prLeft = aw - prW - 16;
+    if (pr) {
+      pr.style.width = prW + "px"; pr.style.height = (ah - 32) + "px";
+      pr.style.left = prLeft + "px"; pr.style.top = "16px";
+      pr.dataset.wantW = prW; pr.dataset.wantH = ah - 32;
+    }
+    if (vs) {
+      const vsLeft = 110;
+      const vsW = Math.max(560, Math.min(1040, prLeft - vsLeft - 16));
+      const vsH = Math.min(680, ah - 36);
+      vs.style.left = vsLeft + "px"; vs.style.top = "18px";
+      vs.style.width = vsW + "px"; vs.style.height = vsH + "px";
+      vs.dataset.wantW = vsW; vs.dataset.wantH = vsH;
+    }
+    document.querySelectorAll(".win").forEach(fitWin);
+  }
+
+  let fitTimer = 0;
+  addEventListener("resize", () => {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(() => {
+      if (!document.body.dataset.moved) layoutDesktop();
+      else document.querySelectorAll(".win").forEach(fitWin);
+    }, 120);
+  });
 
   function markIcon(p) {
     const art = p.iconClass || "i-pr";
@@ -115,7 +175,11 @@
       ? `<div class="sec-label">Planned — not in the current build</div>
          <ul class="planned">${p.planned.map((h) => `<li>${escapeHtml(h)}</li>`).join("")}</ul>`
       : "";
-    const wrapClass = p.flagship ? "erd-wrap art-wrap" : "erd-wrap";
+    const wrapClass = p.imageStyle === "logo" ? "erd-wrap logo-wrap" : p.flagship ? "erd-wrap art-wrap" : "erd-wrap";
+    const gallery = Array.isArray(p.gallery) && p.gallery.length
+      ? `<div class="sec-label">Screenshots</div>
+         <div class="shots">${p.gallery.map((g) => `<figure class="shot"><img src="${escapeHtml(g.src)}" alt="${escapeHtml(g.alt || p.name + " screenshot")}" loading="lazy">${g.caption ? `<figcaption class="figcap">${escapeHtml(g.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`
+      : "";
     const img = p.image
       ? `<div class="sec-label">Visual</div>
          <figure class="${wrapClass}"><img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.imageCaption || "Project visual")}">
@@ -140,7 +204,9 @@
       ${status}${note}
       <div class="sec-label">Overview</div>
       <p>${escapeHtml(p.description)}</p>
-      ${highlights}${planned}${tech}${img}`;
+      ${highlights}${planned}${tech}${gallery}${img}`;
+    const pane = win.querySelector(".pane");
+    if (pane) pane.scrollTop = 0;
     openApp("project");
   }
 
@@ -304,6 +370,7 @@
     const w = W(id);
     if (!w) return;
     w.classList.remove("closed", "min");
+    fitWin(w);
     focusApp(id);
     closeStart();
   }
@@ -355,6 +422,7 @@
           w.style.left = Math.min(innerWidth - 80, Math.max(-w.offsetWidth + 120, ev.clientX - sx)) + "px";
           w.style.top = Math.min(innerHeight - 90, Math.max(0, ev.clientY - sy)) + "px";
         };
+        document.body.dataset.moved = "1";
         const up = () => {
           removeEventListener("mousemove", mv);
           removeEventListener("mouseup", up);
@@ -493,6 +561,7 @@
     setVsTab("profile");
     renderMobile();
     wireWindows();
+    layoutDesktop();
     wireIcons();
     wireStart();
     wireVs();
